@@ -3,14 +3,12 @@ class Animal{
             System.out.println("Animal is eating...");
       }
 }
-
 class Dog extends Animal{
       @Override
       void eat(){
             System.out.println("Dog is eating...");
       }
 }
-
 public class Binding {
       public static void main(String[] args) {
             Dog a1 = new Dog();     // Dog is eating
