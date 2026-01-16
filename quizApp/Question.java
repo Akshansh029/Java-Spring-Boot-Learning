@@ -70,6 +70,9 @@ public class Question {
             );
       }
 
+      /**
+     Check whether the provided answer is current or not for the given question
+     */
       public boolean checkAnswer(Question que, String ans){
             if(que == null){
                   throw new IllegalArgumentException("Question obj cannot be null");
