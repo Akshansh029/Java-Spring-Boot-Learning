@@ -13,7 +13,6 @@ class B extends A{
             System.out.println("B constructor");
       }
 }
-
 public class Super{
       public static void main(String[] args) {
             B obj = new B();
