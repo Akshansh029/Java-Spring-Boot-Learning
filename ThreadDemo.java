@@ -3,7 +3,7 @@ class A extends Thread{
       @Override
       public void run(){
             for (int i = 0; i < 50; i++) {
-                  System.out.println("ThreadA value: + " + i);
+                  System.out.println("ThreadA value: " + i);
             }
             System.out.println("ThreadA execution completed");
       }
@@ -14,7 +14,7 @@ class B implements Runnable{
       @Override
       public void run(){
             for (int i = 0; i < 50; i++) {
-                  System.out.println("ThreadB value: + " + i);
+                  System.out.println("ThreadB value: " + i);
             }
             System.out.println("ThreadB execution completed");
       }
