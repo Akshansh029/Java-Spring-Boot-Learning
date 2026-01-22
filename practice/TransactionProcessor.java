@@ -37,6 +37,7 @@ class BankAccount{
             this.balance = bal;
       }
 
+      // return type should be void
       public boolean deposit(double amount) throws InvalidAmountException{
             if(amount <= 0){
                   throw new InvalidAmountException("Depositing amount must be greater than zero");
@@ -45,6 +46,7 @@ class BankAccount{
             return true; 
       }
 
+      // return type should be void
       public boolean withdraw(double amount) throws InsufficientBalanceException, InvalidAmountException{
             if(amount > balance){
                   throw new InsufficientBalanceException("Insufficient balance");
