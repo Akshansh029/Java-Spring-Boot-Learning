@@ -13,19 +13,25 @@ public class DemoJdbc {
         String url = "jdbc:postgresql://localhost:5432/store_db";
         String uName = "postgres";
         String password = "akstlm10";
-        String insertQuery = "INSERT INTO customers VALUES(6, 'Shehan')";
+        int cust_id = 8;
+        String cust_name = "Lewis";
+        String insertQuery = "INSERT INTO customers VALUES(?, ?)";
         String fetchQuery = "SELECT * FROM customers";
 //      Class.forName("org.postgresql.Driver");
 
         try (Connection con = DriverManager.getConnection(url, uName, password)){
             System.out.println("Database connected successfully!\n");
 
-            Statement stmt = con.createStatement();
+            Statement st = con.createStatement();
+            PreparedStatement prepSt = con.prepareStatement(insertQuery);
 
-            stmt.executeUpdate(insertQuery);
+            prepSt.setInt(1, cust_id);
+            prepSt.setString(2, cust_name);
+            prepSt.execute();
 
-            ResultSet rs = stmt.executeQuery(fetchQuery);
+            ResultSet rs = st.executeQuery(fetchQuery);
 
+            System.out.println("cust_id - cust_name");
             while(rs.next()){
                 int id = rs.getInt("cust_id");
                 String name = rs.getString("cust_name");
