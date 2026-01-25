@@ -8,7 +8,8 @@ import org.hibernate.cfg.Configuration;
 public class Main {
 
     public static void main(String[] args) {
-        Parent p1 = new Parent(1, "Sunil", "Singh", 53);
+        Address add = new Address("252/1, Shantinagar", "Bishrampur", "Chhattisgarh", "India", "497226");
+        Parent p1 = new Parent(1, "Sunil", "Singh", 53, add);
 
         Configuration cfg = new Configuration()
                                 .addAnnotatedClass(com.akshansh.Parent.class)
@@ -24,6 +25,9 @@ public class Main {
 
             session.persist(p1);
             tx.commit();
+
+            Parent p = session.find(Parent.class, 1);
+            System.out.println(p);
 
             session.close();
 

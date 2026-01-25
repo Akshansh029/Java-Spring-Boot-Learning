@@ -16,44 +16,34 @@ public class Parent {
     private String lastName;
     @Column(name = "p_age")
     private int pAge;
+    private Address address;
 
-    public Parent(int pId, String firstName, String lastName, int pAge) {
+    public Parent(int pId, String firstName, String lastName, int pAge, Address address) {
         this.pId = pId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.pAge = pAge;
+        this.address = address;
     }
 
     public int getpId() {
         return pId;
     }
 
-    public void setpId(int pId) {
-        this.pId = pId;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public int getpAge() {
         return pAge;
     }
 
-    public void setpAge(int pAge) {
-        this.pAge = pAge;
+    public Address getAddress() {
+        return address;
     }
 
     @Override
@@ -63,6 +53,7 @@ public class Parent {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", pAge=" + pAge +
+                ", address=" + address +
                 '}';
     }
 }
