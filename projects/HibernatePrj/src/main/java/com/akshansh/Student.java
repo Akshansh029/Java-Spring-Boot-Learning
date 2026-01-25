@@ -11,6 +11,8 @@ public class Student {
     private String sName;
     private int marks;
 
+    public Student() {}
+
     public Student(int rollNo, String sName, int marks) {
         this.rollNo = rollNo;
         this.sName = sName;
