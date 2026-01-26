@@ -1,22 +1,25 @@
 package com.akshansh;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Student {
     @Id
     private int rollNo;
-
     private String sName;
     private int marks;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "student")
+    private List<Laptop> laptops;
 
     public Student() {}
 
-    public Student(int rollNo, String sName, int marks) {
+    public Student(int rollNo, String sName, int marks, List<Laptop> laptops) {
         this.rollNo = rollNo;
         this.sName = sName;
         this.marks = marks;
+        this.laptops = laptops;
     }
 
     public int getRollNo() {
@@ -31,12 +34,17 @@ public class Student {
         return marks;
     }
 
+    public List<Laptop> getLaptops() {
+        return laptops;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "rollNo=" + rollNo +
                 ", sName='" + sName + '\'' +
                 ", marks=" + marks +
+                ", laptops=" + laptops +
                 '}';
     }
 }
