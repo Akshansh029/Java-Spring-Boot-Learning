@@ -10,7 +10,7 @@ public class Student {
     private int rollNo;
     private String sName;
     private int marks;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "student")
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Laptop> laptops;
 
     public Student() {}

@@ -2,6 +2,8 @@ package com.akshansh;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Laptop {
     @Id
@@ -10,26 +12,25 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
-    @ManyToOne
-    @JoinColumn(name = "student_roll_no")
-    private Student student;
+    @ManyToMany(mappedBy = "laptops")
+    private List<Student> students;
 
-    public Student getStudent() {
-        return student;
+    public List<Student> getStudents() {
+        return students;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setStudent(List<Student> students) {
+        this.students = students;
     }
 
     public Laptop() {}
 
-    public Laptop(int lid, String brand, String model, int ram, Student student) {
+    public Laptop(int lid, String brand, String model, int ram, List<Student> students) {
         this.lid = lid;
         this.brand = brand;
         this.model = model;
         this.ram = ram;
-        this.student = student;
+        this.students = students;
     }
 
     public int getLid() {
