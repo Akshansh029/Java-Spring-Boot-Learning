@@ -1,8 +1,12 @@
 package com.akshansh;
 
+import com.akshansh.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class StudentDAO {
 
@@ -17,6 +21,23 @@ public class StudentDAO {
             Transaction tx = session.beginTransaction();
             session.persist(s);
             tx.commit();
+        }
+    }
+
+    public List<Student> getAll() {
+        try (Session session = sf.openSession()) {
+            String hql = "FROM Student";
+            Query<Student> query = session.createQuery(hql, Student.class);
+            return query.getResultList();
+        }
+    }
+
+    public List<Student> getStudentByName(String name) {
+        try (Session session = sf.openSession()) {
+            String hql = "FROM Student s WHERE sName = :name";
+            Query<Student> query = session.createQuery(hql, Student.class);
+            query.setParameter("name", name);
+            return query.getResultList();
         }
     }
 

@@ -28,7 +28,7 @@
 
         <!-- Optional but useful -->
         <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.format_sql">false</property>
 
         <!-- For learning -->
         <property name="hibernate.hbm2ddl.auto">create</property>

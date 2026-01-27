@@ -1,4 +1,4 @@
-package com.akshansh;
+package com.akshansh.entity;
 
 import jakarta.persistence.Embeddable;
 
