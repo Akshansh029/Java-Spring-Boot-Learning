@@ -32,8 +32,7 @@ public class Student {
 
     public Student() {}
 
-    public Student(int id, String firstName, String lastName, int age, double gpa, Department department, Set<Course> courses) {
-        this.id = id;
+    public Student(String firstName, String lastName, int age, double gpa, Department department, Set<Course> courses) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;

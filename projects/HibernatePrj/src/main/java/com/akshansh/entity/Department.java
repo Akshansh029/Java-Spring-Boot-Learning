@@ -19,8 +19,7 @@ public class Department {
 
     public Department() {}
 
-    public Department(int id, String name, String building, Set<Student> students) {
-        this.id = id;
+    public Department(String name, String building, Set<Student> students) {
         this.name = name;
         this.building = building;
         this.students = students;

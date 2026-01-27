@@ -20,8 +20,7 @@ public class Course {
 
     public Course() {}
 
-    public Course(int id, String code, String title, int credits, Set<Student> students) {
-        this.id = id;
+    public Course(String code, String title, int credits, Set<Student> students) {
         this.code = code;
         this.title = title;
         this.credits = credits;

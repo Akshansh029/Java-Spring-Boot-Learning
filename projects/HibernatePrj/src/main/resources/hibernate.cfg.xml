@@ -31,7 +31,7 @@
         <property name="hibernate.format_sql">false</property>
 
         <!-- For learning -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
     </session-factory>
 </hibernate-configuration>
