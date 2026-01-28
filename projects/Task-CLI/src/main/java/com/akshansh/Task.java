@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-public class Task {
+public class Task implements Comparable<Task>{
     private static final AtomicInteger idCounter = new AtomicInteger(0);
     private int id;
     private String desc;
@@ -69,5 +69,14 @@ public class Task {
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Task that){
+        if(this.getId() > that.getId()){
+            return 1;
+        } else{
+            return 0;
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.akshansh;
 
-import com.akshansh.commands.TaskCLIAdd;
+import com.akshansh.commands.AddTask;
+import com.akshansh.commands.UpdateTask;
 import picocli.CommandLine;
 
 import java.util.Scanner;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 @CommandLine.Command(
         name = "task-cli",
         description = "Handles todo list",
-        subcommands = {TaskCLIAdd.class}
+        subcommands = {AddTask.class, UpdateTask.class}
 )
 public class Main implements Runnable {
 
@@ -21,8 +22,7 @@ public class Main implements Runnable {
             runInteractiveMode();
         } else {
             System.out.println("Task-CLI handles your tasks efficiently!");
-            System.out.println("Usage: task-cli add \"your task description\"");
-            System.out.println("   or: task-cli -i  (for interactive mode)");
+            System.out.println("Usage: task-cli -i  (for interactive mode)");
         }
     }
 

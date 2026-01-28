@@ -20,7 +20,7 @@ import java.util.concurrent.Callable;
         name = "add",
         description = "Add a new task"
 )
-public class TaskCLIAdd implements Callable<Integer> {
+public class AddTask implements Callable<Integer> {
 
     @CommandLine.Parameters(index = "0", description = "The task description")
     private String taskDescription;
