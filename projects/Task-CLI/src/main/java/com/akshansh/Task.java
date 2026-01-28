@@ -1,31 +1,19 @@
 package com.akshansh;
 
 import java.util.Date;
-
-enum Status{
-    TODO("todo"), IN_PROGRESS("in-progress"), DONE("done");
-
-    private final String stat;
-
-    Status(String stat){
-        this.stat = stat;
-    }
-
-    public String getStat(){
-        return stat;
-    }
-}
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Task {
+    private static final AtomicInteger idCounter = new AtomicInteger(0);
     private int id;
     private String desc;
     private Status status;
     private Date createdAt;
     private Date updatedAt;
 
-    public Task(int id, String desc, Status status, Date createdAt, Date updatedAt) {
-        this.id = id;
+    public Task(String desc, Status status, Date createdAt, Date updatedAt) {
+        this.id = idCounter.incrementAndGet();
         this.desc = desc;
         this.status = status;
         this.createdAt = createdAt;
