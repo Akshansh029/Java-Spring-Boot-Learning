@@ -1,17 +1,13 @@
 package com.akshansh.commands;
 
+import com.akshansh.TasksDAO;
 import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
 import com.akshansh.Status;
 import com.akshansh.Task;
 import picocli.CommandLine;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -36,24 +32,10 @@ public class AddTask implements Callable<Integer> {
         Task t = new Task(cleanDescription, Status.TODO, new Date(), new Date());
 
         try {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            File file = new File("data.json");
-
-            // Read existing tasks or initialize
-            List<Task> tasks = new ArrayList<>();
-
-            if(file.exists()){
-                try(FileReader fr = new FileReader(file)){
-                    JsonElement jsonElement = JsonParser.parseReader(fr);
-                    if(jsonElement.isJsonObject()){
-                        JsonObject root = jsonElement.getAsJsonObject();
-                        if(root.has("tasks")){
-                            Type taskListType = new TypeToken<List<Task>>(){}.getType();
-                            tasks = gson.fromJson(root.get("tasks"), taskListType);
-                        }
-                    }
-                }
-            }
+            TasksDAO dao = new TasksDAO();
+            List<Task> tasks = dao.getTaskList();
+            Gson gson = dao.getGson();
+            File file = dao.getFile();
 
             // Adding task object to tasks list in JSON
             tasks.add(t);
@@ -68,7 +50,7 @@ public class AddTask implements Callable<Integer> {
 
             System.out.println("Task added successfully (ID: " + t.getId() + ")");
             return 0;
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
             return 1;
         }

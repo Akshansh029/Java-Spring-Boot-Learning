@@ -3,7 +3,6 @@ package com.akshansh;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
 public class Task implements Comparable<Task>{
     private static final AtomicInteger idCounter = new AtomicInteger(0);
     private int id;

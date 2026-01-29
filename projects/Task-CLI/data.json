@@ -1,13 +1,6 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "desc": "Buy groceries",
-      "status": "DONE",
-      "createdAt": "Jan 28, 2026, 10:00:41 PM",
-      "updatedAt": "Jan 28, 2026, 10:00:41 PM"
-    },
-    {
       "id": 2,
       "desc": "Make Project-2 ppt",
       "status": "TODO",
@@ -38,7 +31,7 @@
     {
       "id": 6,
       "desc": "Learn Design Patterns",
-      "status": "DONE",
+      "status": "IN_PROGRESS",
       "createdAt": "Jan 29, 2026, 9:42:40 AM",
       "updatedAt": "Jan 29, 2026, 9:42:40 AM"
     }
