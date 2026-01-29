@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "desc": "Buy chips",
+      "status": "IN_PROGRESS",
+      "createdAt": "Jan 29, 2026, 11:57:25 AM",
+      "updatedAt": "Jan 29, 2026, 11:59:11 AM"
+    },
+    {
+      "id": 2,
+      "desc": "Go to gym",
+      "status": "TODO",
+      "createdAt": "Jan 29, 2026, 11:59:31 AM",
+      "updatedAt": "Jan 29, 2026, 11:59:31 AM"
+    },
+    {
+      "id": 3,
+      "desc": "Repair phone",
+      "status": "TODO",
+      "createdAt": "Jan 29, 2026, 11:59:42 AM",
+      "updatedAt": "Jan 29, 2026, 11:59:42 AM"
+    }
+  ]
+}

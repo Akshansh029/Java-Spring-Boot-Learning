@@ -22,11 +22,11 @@ class InvalidAmountException extends Exception{
       }
 }
 
-class BankAccount{
+class Account{
       private String accountHolderName;
       private double balance;
 
-      public BankAccount(String holderName, double bal) throws InvalidAmountException{
+      public Account(String holderName, double bal) throws InvalidAmountException{
             if(bal < 0){
                   throw new InvalidAmountException("Initial amount must be greater than zero");
             }
@@ -68,14 +68,14 @@ class BankAccount{
 
       @Override
       public String toString() {
-            return "BankAccount [accountHolderName=" + accountHolderName + ", balance=" + balance + "]";
+            return "Account [accountHolderName=" + accountHolderName + ", balance=" + balance + "]";
       }
 }
 
 public class TransactionProcessor {
       public static void main(String[] args) {
             try {
-                  BankAccount acc = new BankAccount("Akshansh", 10000);
+                  Account acc = new Account("Akshansh", 10000);
                   System.out.println("Account created successfully!");
                   System.out.println("Account details: " + acc.toString());
 

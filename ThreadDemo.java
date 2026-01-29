@@ -1,5 +1,5 @@
 // Creating thread using Thread class
-class A extends Thread{
+class ThreadA extends Thread{
       @Override
       public void run(){
             for (int i = 0; i < 50; i++) {
@@ -10,7 +10,7 @@ class A extends Thread{
 }
 
 // Creating thread using Runnable interface
-class B implements Runnable{
+class ThreadB implements Runnable{
       @Override
       public void run(){
             for (int i = 0; i < 50; i++) {
@@ -22,8 +22,8 @@ class B implements Runnable{
 
 public class ThreadDemo {
       public static void main(String[] args) {
-            A obj = new A();
-            B obj1 = new B();
+            ThreadA obj = new ThreadA();
+            ThreadB obj1 = new ThreadB();
             Thread t = new Thread(obj1);
             obj.start();
             t.start();
