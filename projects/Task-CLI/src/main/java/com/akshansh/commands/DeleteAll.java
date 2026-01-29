@@ -8,12 +8,10 @@ import java.io.IOException;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(
-        name = "delete",
-        description = "Delete a task"
+        name = "delete-all",
+        description = "Delete all tasks"
 )
-public class DeleteTask implements Callable<Integer> {
-    @CommandLine.Parameters(index = "0", description = "Task ID")
-    private int taskId;
+public class DeleteAll implements Callable<Integer> {
 
     @Override
     public Integer call(){

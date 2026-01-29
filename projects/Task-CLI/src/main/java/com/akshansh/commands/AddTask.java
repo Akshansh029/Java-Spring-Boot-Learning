@@ -29,26 +29,20 @@ public class AddTask implements Callable<Integer> {
             cleanDescription = cleanDescription.substring(1, cleanDescription.length() - 1);
         }
 
-        Task t = new Task(cleanDescription, Status.TODO, new Date(), new Date());
 
         try {
             TasksDAO dao = new TasksDAO();
             List<Task> tasks = dao.getTaskList();
-            Gson gson = dao.getGson();
-            File file = dao.getFile();
+
+            // New task
+            Task newTask = new Task(dao.getNextId(), cleanDescription, Status.TODO, new Date(), new Date());
 
             // Adding task object to tasks list in JSON
-            tasks.add(t);
+            tasks.add(newTask);
 
-            JsonObject root = new JsonObject();
-            root.add("tasks", gson.toJsonTree(tasks));
+            dao.saveTaskList(tasks);
 
-            // Write back to file
-            try (FileWriter fileWriter = new FileWriter(file)) {
-                gson.toJson(root, fileWriter);
-            }
-
-            System.out.println("Task added successfully (ID: " + t.getId() + ")");
+            System.out.println("Task added successfully (ID: " + newTask.getId() + ")");
             return 0;
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());

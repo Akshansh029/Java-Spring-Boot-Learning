@@ -1,5 +1,6 @@
 package com.akshansh.commands;
 
+import com.akshansh.Status;
 import com.akshansh.Task;
 import com.akshansh.TasksDAO;
 import com.google.gson.*;
@@ -25,36 +26,23 @@ public class UpdateTask implements Callable<Integer> {
     @Override
     public Integer call(){
         // Remove /"
-        String cleanDescription = taskDescription;
-        if (cleanDescription.startsWith("\"") && cleanDescription.endsWith("\"")) {
-            cleanDescription = cleanDescription.substring(1, cleanDescription.length() - 1);
+        if (taskDescription.startsWith("\"") && taskDescription.endsWith("\"")) {
+            taskDescription = taskDescription.substring(1, taskDescription.length() - 1);
         }
 
         try {
             TasksDAO dao = new TasksDAO();
             List<Task> tasks = dao.getTaskList();
-            Gson gson = dao.getGson();
-            File file = dao.getFile();
 
-            // Initial check
-            if(dao.getTaskById(taskId) != null){
-                dao.getTaskById(taskId).setDesc(cleanDescription);
+            // Find and update the task description
+            if(dao.updateTaskDesc(taskId, taskDescription)){
+                System.out.println("Task (ID: " + taskId + ") marked done. Good job!");
+                return 0;
             } else{
                 System.out.println("No task with ID: " + taskId);
                 return 1;
             }
-
-            JsonObject root = new JsonObject();
-            root.add("tasks", gson.toJsonTree(tasks));
-
-            // Write back to file
-            try (FileWriter fileWriter = new FileWriter(file)) {
-                gson.toJson(root, fileWriter);
-            }
-
-            System.out.println("Task updated successfully (ID: " + taskId + ")");
-            return 0;
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
             return 1;
         }

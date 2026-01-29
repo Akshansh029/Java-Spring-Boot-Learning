@@ -4,15 +4,14 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Task implements Comparable<Task>{
-    private static final AtomicInteger idCounter = new AtomicInteger(0);
     private int id;
     private String desc;
     private Status status;
     private Date createdAt;
     private Date updatedAt;
 
-    public Task(String desc, Status status, Date createdAt, Date updatedAt) {
-        this.id = idCounter.incrementAndGet();
+    public Task(int id, String desc, Status status, Date createdAt, Date updatedAt) {
+        this.id = id;
         this.desc = desc;
         this.status = status;
         this.createdAt = createdAt;

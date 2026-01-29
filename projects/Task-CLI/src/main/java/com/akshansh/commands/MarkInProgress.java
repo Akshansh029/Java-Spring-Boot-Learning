@@ -24,29 +24,16 @@ public class MarkInProgress implements Callable<Integer> {
     public Integer call(){
         try {
             TasksDAO dao = new TasksDAO();
-            List<Task> tasks = dao.getTaskList();
-            Gson gson = dao.getGson();
-            File file = dao.getFile();
 
-            // Initial check and update task status
-            if(dao.getTaskById(taskId) != null){
-                dao.getTaskById(taskId).setStatus(Status.IN_PROGRESS);
+            // Find and update the task status as in-progress
+            if(dao.updateTaskStatus(taskId, Status.IN_PROGRESS)){
+                System.out.println("Task (ID: " + taskId + ") marked in-progress");
+                return 0;
             } else{
                 System.out.println("No task with ID: " + taskId);
                 return 1;
             }
-
-            JsonObject root = new JsonObject();
-            root.add("tasks", gson.toJsonTree(tasks));
-
-            // Write back to file
-            try (FileWriter fileWriter = new FileWriter(file)) {
-                gson.toJson(root, fileWriter);
-            }
-
-            System.out.println("Task marked in progress (ID: " + taskId + ")");
-            return 0;
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
             return 1;
         }
