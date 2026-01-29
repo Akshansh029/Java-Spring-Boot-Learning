@@ -1,46 +1,25 @@
 {
   "tasks": [
     {
+      "id": 1,
+      "desc": "Buy chips",
+      "status": "IN_PROGRESS",
+      "createdAt": "Jan 29, 2026, 11:57:25 AM",
+      "updatedAt": "Jan 29, 2026, 11:59:11 AM"
+    },
+    {
       "id": 2,
-      "desc": "Make Project-2 ppt",
+      "desc": "Go to gym",
       "status": "TODO",
-      "createdAt": "Jan 28, 2026, 10:00:48 PM",
-      "updatedAt": "Jan 28, 2026, 10:00:48 PM"
+      "createdAt": "Jan 29, 2026, 11:59:31 AM",
+      "updatedAt": "Jan 29, 2026, 11:59:31 AM"
     },
     {
       "id": 3,
-      "desc": "Go to gym",
-      "status": "IN_PROGRESS",
-      "createdAt": "Jan 28, 2026, 10:01:17 PM",
-      "updatedAt": "Jan 28, 2026, 10:01:17 PM"
-    },
-    {
-      "id": 4,
-      "desc": "Watch Odyssey",
+      "desc": "Repair phone",
       "status": "TODO",
-      "createdAt": "Jan 28, 2026, 10:01:27 PM",
-      "updatedAt": "Jan 28, 2026, 10:01:27 PM"
-    },
-    {
-      "id": 5,
-      "desc": "Start Spring Boot Section",
-      "status": "IN_PROGRESS",
-      "createdAt": "Jan 28, 2026, 10:01:47 PM",
-      "updatedAt": "Jan 28, 2026, 10:01:47 PM"
-    },
-    {
-      "id": 6,
-      "desc": "Learn Design Patterns",
-      "status": "IN_PROGRESS",
-      "createdAt": "Jan 29, 2026, 9:42:40 AM",
-      "updatedAt": "Jan 29, 2026, 9:42:40 AM"
-    },
-    {
-      "id": 7,
-      "desc": "Random task",
-      "status": "DONE",
-      "createdAt": "Jan 29, 2026, 11:42:28 AM",
-      "updatedAt": "Jan 29, 2026, 11:42:28 AM"
+      "createdAt": "Jan 29, 2026, 11:59:42 AM",
+      "updatedAt": "Jan 29, 2026, 11:59:42 AM"
     }
   ]
 }

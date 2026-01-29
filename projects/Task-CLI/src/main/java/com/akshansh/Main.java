@@ -13,7 +13,8 @@ import java.util.Scanner;
                        DeleteTask.class,
                        ListTasks.class,
                        MarkInProgress.class,
-                       MarkDone.class
+                       MarkDone.class,
+                       DeleteAll.class
         }
 )
 public class Main implements Runnable {
@@ -34,7 +35,7 @@ public class Main implements Runnable {
     private void runInteractiveMode() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=== Task CLI Interactive Mode ===");
-        System.out.println("Available commands: add, list, update, delete, exit");
+        System.out.println("Available commands: add, list, update, delete, delete-all, exit");
 
         while (true) {
             System.out.print("\ntask-cli> ");

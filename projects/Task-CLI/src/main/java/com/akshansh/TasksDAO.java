@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TasksDAO {
@@ -73,6 +74,7 @@ public class TasksDAO {
         for (Task task : tasks) {
             if (task.getId() == taskId) {
                 task.setStatus(newStatus);
+                task.setUpdatedAt(new Date());
                 saveTaskList(tasks);
                 return true;
             }
@@ -87,20 +89,7 @@ public class TasksDAO {
         for (Task task : tasks) {
             if (task.getId() == taskId) {
                 task.setDesc(desc);
-                saveTaskList(tasks);
-                return true;
-            }
-        }
-
-        return false;  // Task not found
-    }
-
-    public boolean removeTask(int taskId) throws IOException {
-        List<Task> tasks = getTaskList();
-
-        for (Task task : tasks) {
-            if (task.getId() == taskId) {
-                tasks.remove(task);
+                task.setUpdatedAt(new Date());
                 saveTaskList(tasks);
                 return true;
             }
