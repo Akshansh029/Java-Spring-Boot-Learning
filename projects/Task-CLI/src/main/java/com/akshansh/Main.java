@@ -1,6 +1,8 @@
 package com.akshansh;
 
 import com.akshansh.commands.AddTask;
+import com.akshansh.commands.DeleteTask;
+import com.akshansh.commands.ListTasks;
 import com.akshansh.commands.UpdateTask;
 import picocli.CommandLine;
 
@@ -9,7 +11,7 @@ import java.util.Scanner;
 @CommandLine.Command(
         name = "task-cli",
         description = "Handles todo list",
-        subcommands = {AddTask.class, UpdateTask.class}
+        subcommands = {AddTask.class, UpdateTask.class, DeleteTask.class, ListTasks.class}
 )
 public class Main implements Runnable {
 
@@ -29,7 +31,7 @@ public class Main implements Runnable {
     private void runInteractiveMode() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=== Task CLI Interactive Mode ===");
-        System.out.println("Available commands: add, list, exit");
+        System.out.println("Available commands: add, update, delete, exit");
 
         while (true) {
             System.out.print("\ntask-cli> ");

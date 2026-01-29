@@ -12,4 +12,11 @@ public enum Status{
     public String getStat(){
         return stat;
     }
+
+    static public boolean checkStatus(String s){
+        for (Status status : Status.values()){
+            if(s.equals(status.stat)) return true;
+        }
+        return false;
+    }
 }

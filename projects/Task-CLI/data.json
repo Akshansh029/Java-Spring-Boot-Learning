@@ -3,7 +3,7 @@
     {
       "id": 1,
       "desc": "Buy groceries",
-      "status": "TODO",
+      "status": "DONE",
       "createdAt": "Jan 28, 2026, 10:00:41 PM",
       "updatedAt": "Jan 28, 2026, 10:00:41 PM"
     },
@@ -17,7 +17,7 @@
     {
       "id": 3,
       "desc": "Go to gym",
-      "status": "TODO",
+      "status": "IN_PROGRESS",
       "createdAt": "Jan 28, 2026, 10:01:17 PM",
       "updatedAt": "Jan 28, 2026, 10:01:17 PM"
     },
@@ -30,8 +30,8 @@
     },
     {
       "id": 5,
-      "desc": "Start Spring Boot section",
-      "status": "TODO",
+      "desc": "Start Spring Boot Section",
+      "status": "IN_PROGRESS",
       "createdAt": "Jan 28, 2026, 10:01:47 PM",
       "updatedAt": "Jan 28, 2026, 10:01:47 PM"
     }
