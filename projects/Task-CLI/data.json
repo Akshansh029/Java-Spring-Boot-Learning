@@ -34,6 +34,13 @@
       "status": "IN_PROGRESS",
       "createdAt": "Jan 28, 2026, 10:01:47 PM",
       "updatedAt": "Jan 28, 2026, 10:01:47 PM"
+    },
+    {
+      "id": 6,
+      "desc": "Learn Design Patterns",
+      "status": "DONE",
+      "createdAt": "Jan 29, 2026, 9:42:40 AM",
+      "updatedAt": "Jan 29, 2026, 9:42:40 AM"
     }
   ]
 }
