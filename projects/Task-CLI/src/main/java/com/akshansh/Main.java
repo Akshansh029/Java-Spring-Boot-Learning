@@ -41,7 +41,7 @@ public class Main implements Runnable {
             System.out.print("\ntask-cli> ");
             String input = scanner.nextLine().trim();
 
-            if (input.equalsIgnoreCase("exit") || input.equalsIgnoreCase("quit")) {
+            if (input.equalsIgnoreCase("exit")) {
                 System.out.println("Goodbye!");
                 break;
             }
