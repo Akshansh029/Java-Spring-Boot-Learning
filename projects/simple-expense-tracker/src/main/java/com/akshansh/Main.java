@@ -1,9 +1,6 @@
 package com.akshansh;
 
-import com.akshansh.commands.AddExpense;
-import com.akshansh.commands.DeleteExpense;
-import com.akshansh.commands.ListExpenses;
-import com.akshansh.commands.SummaryCommand;
+import com.akshansh.commands.*;
 import picocli.CommandLine;
 
 import java.util.Scanner;
@@ -15,7 +12,8 @@ import java.util.Scanner;
                 AddExpense.class,
                 ListExpenses.class,
                 SummaryCommand.class,
-                DeleteExpense.class
+                DeleteExpense.class,
+                UpdateExpense.class
         }
 )
 public class Main implements Runnable{

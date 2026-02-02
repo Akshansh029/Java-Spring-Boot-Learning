@@ -17,6 +17,12 @@
       "description": "Adidas Football Boots",
       "amount": 1285.0,
       "createdAt": "Feb 2, 2026, 9:55:58 AM"
+    },
+    {
+      "id": 5,
+      "description": "Camphor",
+      "amount": 75.0,
+      "createdAt": "Feb 2, 2026, 11:29:00 AM"
     }
   ]
 }

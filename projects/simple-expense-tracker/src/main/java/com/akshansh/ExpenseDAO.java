@@ -60,6 +60,21 @@ public class ExpenseDAO {
         return maxId + 1;
     }
 
+    public boolean updateExpense(int id, String desc, double amount) throws IOException{
+        List<Expense> expenseList = getExpensesList();
+
+        for(Expense e : expenseList){
+            if(e.getId() == id){
+                e.setDescription(desc);
+                e.setAmount(amount);
+                saveExpenseList(expenseList);
+                return true;
+            }
+        }
+
+        return false;   // Expense not found
+    }
+
     public boolean removeExpense(int id) throws IOException{
         List<Expense> expenseList = getExpensesList();
 
