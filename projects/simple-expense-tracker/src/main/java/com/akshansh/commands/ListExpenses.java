@@ -24,12 +24,22 @@ public class ListExpenses implements Callable<Integer> {
             if(expenseList.isEmpty()){
                 System.out.println("No expenses yet!");
             } else{
-                System.out.println("ID        Date            Amount        Description");
-                expenseList.forEach(e -> {
-                    System.out.println(e.getId() + "       " + formatter.format(e.getCreatedAt()) +
-                            "      Rs " + e.getAmount() + "        "
-                            + e.getDescription());
-                });
+                System.out.printf(
+                        "%-8s %-15s %-30s %-20s%n",
+                        "ID",
+                        "Date",
+                        "Description",
+                        "Amount"
+                );
+                for (Expense expense : expenseList) {
+                    System.out.printf(
+                            "%-8s %-15s %-30s %-20s%n",
+                            expense.getId(),
+                            formatter.format(expense.getCreatedAt()),
+                            expense.getDescription(),
+                            expense.getAmount()
+                    );
+                }
             }
 
             return 0;
