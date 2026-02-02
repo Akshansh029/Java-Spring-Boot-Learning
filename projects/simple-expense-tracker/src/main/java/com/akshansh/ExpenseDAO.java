@@ -59,4 +59,18 @@ public class ExpenseDAO {
 
         return maxId + 1;
     }
+
+    public boolean removeExpense(int id) throws IOException{
+        List<Expense> expenseList = getExpensesList();
+
+        for(Expense e : expenseList){
+            if(e.getId() == id){
+                expenseList.remove(e);
+                saveExpenseList(expenseList);
+                return true;
+            }
+        }
+
+        return false;   // Expense not found
+    }
 }
