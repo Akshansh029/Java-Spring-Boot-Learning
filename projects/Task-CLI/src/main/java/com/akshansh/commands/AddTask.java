@@ -23,12 +23,10 @@ public class AddTask implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        // New Task to  be added
         String cleanDescription = taskDescription;
         if (cleanDescription.startsWith("\"") && cleanDescription.endsWith("\"")) {
             cleanDescription = cleanDescription.substring(1, cleanDescription.length() - 1);
         }
-
 
         try {
             TasksDAO dao = new TasksDAO();

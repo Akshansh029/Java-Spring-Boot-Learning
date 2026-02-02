@@ -1,0 +1,22 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "description": "Lunch",
+      "amount": 220.0,
+      "createdAt": "Feb 2, 2026, 9:48:34 AM"
+    },
+    {
+      "id": 2,
+      "description": "Dinner",
+      "amount": 430.0,
+      "createdAt": "Feb 2, 2026, 9:49:19 AM"
+    },
+    {
+      "id": 3,
+      "description": "Phone case",
+      "amount": 640.0,
+      "createdAt": "Feb 2, 2026, 9:49:54 AM"
+    }
+  ]
+}
