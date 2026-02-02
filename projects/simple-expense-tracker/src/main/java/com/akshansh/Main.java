@@ -14,7 +14,8 @@ import java.util.Scanner;
                 SummaryCommand.class,
                 DeleteExpense.class,
                 UpdateExpense.class,
-                ExportData.class
+                ExportData.class,
+                DeleteAllExpenses.class
         }
 )
 public class Main implements Runnable{
