@@ -2,6 +2,7 @@ package com.akshansh;
 
 import com.akshansh.commands.AddExpense;
 import com.akshansh.commands.ListExpenses;
+import com.akshansh.commands.SummaryCommand;
 import picocli.CommandLine;
 
 import java.util.Scanner;
@@ -11,7 +12,8 @@ import java.util.Scanner;
         description = "Manage your expenses",
         subcommands = {
                 AddExpense.class,
-                ListExpenses.class
+                ListExpenses.class,
+                SummaryCommand.class
         }
 )
 public class Main implements Runnable{

@@ -27,7 +27,7 @@ public class ListExpenses implements Callable<Integer> {
                 System.out.println("ID        Date            Amount        Description");
                 expenseList.forEach(e -> {
                     System.out.println(e.getId() + "       " + formatter.format(e.getCreatedAt()) +
-                            "      Rs." + e.getAmount() + "        "
+                            "      Rs " + e.getAmount() + "        "
                             + e.getDescription());
                 });
             }
