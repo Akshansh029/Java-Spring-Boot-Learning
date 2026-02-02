@@ -4,7 +4,10 @@ import com.akshansh.ExpenseDAO;
 import com.akshansh.classes.Expense;
 import picocli.CommandLine;
 
+import java.time.Month;
+import java.time.format.TextStyle;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(
@@ -18,6 +21,11 @@ public class SummaryCommand implements Callable<Integer> {
     @Override
     public Integer call(){
         try{
+            if(month < 0 || month > 12){
+                System.out.println("Month can only be from 1 to 12, 0 for all expenses");
+                return 1;
+            }
+
             ExpenseDAO dao = new ExpenseDAO();
             List<Expense> expenseList = dao.getExpensesList();
 
@@ -28,7 +36,7 @@ public class SummaryCommand implements Callable<Integer> {
                         .reduce(0, Double::sum);
 
                 if(totalMonthlyExpenses != 0){
-                    System.out.println("Total Expenses: Rs " + totalMonthlyExpenses);
+                    System.out.println("Total Expenses for " + Month.of(month).getDisplayName(TextStyle.FULL, Locale.US) + ": Rs " + totalMonthlyExpenses);
                 } else{
                     System.out.println("No expenses for given month!");
                 }
