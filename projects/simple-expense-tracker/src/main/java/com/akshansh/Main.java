@@ -13,7 +13,8 @@ import java.util.Scanner;
                 ListExpenses.class,
                 SummaryCommand.class,
                 DeleteExpense.class,
-                UpdateExpense.class
+                UpdateExpense.class,
+                ExportData.class
         }
 )
 public class Main implements Runnable{
@@ -33,7 +34,7 @@ public class Main implements Runnable{
     private void runInteractiveMode() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=== Expense Tracker Interactive Mode ===");
-        System.out.println("Available commands: add, list, summary, update, delete, delete-all, exit");
+        System.out.println("Available commands: add, list, summary, update, delete, delete-all, export, exit");
 
         while (true) {
             System.out.print("\nexpense-tracker> ");
