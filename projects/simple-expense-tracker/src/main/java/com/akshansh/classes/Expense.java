@@ -14,7 +14,7 @@ public class Expense {
         } else if (description.isEmpty()) {
             throw new IllegalArgumentException("Expense must have a description");
         } else if (amount <= 0) {
-            throw new IllegalArgumentException("Expense amount must be at least Rs.1");
+            throw new IllegalArgumentException("Expense amount cannot be less than Rs.1");
         } else if (createdAt == null) {
             throw new IllegalArgumentException("Expense must have a date");
         }

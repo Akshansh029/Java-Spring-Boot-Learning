@@ -1,6 +1,7 @@
 package com.akshansh;
 
 import com.akshansh.commands.AddExpense;
+import com.akshansh.commands.ListExpenses;
 import picocli.CommandLine;
 
 import java.util.Scanner;
@@ -9,7 +10,8 @@ import java.util.Scanner;
         name = "expense-tracker",
         description = "Manage your expenses",
         subcommands = {
-                AddExpense.class
+                AddExpense.class,
+                ListExpenses.class
         }
 )
 public class Main implements Runnable{
