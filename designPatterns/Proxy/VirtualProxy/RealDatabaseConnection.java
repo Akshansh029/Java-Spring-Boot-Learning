@@ -14,7 +14,7 @@ public class RealDatabaseConnection implements DatabaseConnection {
         System.out.println("Establishing expensive database connection to: " + connectionUrl);
         // Simulate connection delay
         try {
-            Thread.sleep(2000); // 2 second delay
+            Thread.sleep(2000); // 2 seconds delay
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
