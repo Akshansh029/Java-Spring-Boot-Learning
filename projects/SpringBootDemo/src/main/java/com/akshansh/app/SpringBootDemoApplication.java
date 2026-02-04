@@ -1,5 +1,6 @@
 package com.akshansh.app;
 
+import com.akshansh.app.model.Alien;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
