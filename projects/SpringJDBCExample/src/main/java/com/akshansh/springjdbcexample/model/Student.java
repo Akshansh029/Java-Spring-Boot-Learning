@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 public class Student {
+    private int rollNo;
     private String name;
-    private int age;
     private int marks;
 
     public String getName() {
@@ -18,12 +18,12 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public int getRollno() {
+        return rollNo;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
     }
 
     public int getMarks() {
@@ -37,8 +37,8 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+                "rollNo=" + rollNo +
+                ", name='" + name + '\'' +
                 ", marks=" + marks +
                 '}';
     }

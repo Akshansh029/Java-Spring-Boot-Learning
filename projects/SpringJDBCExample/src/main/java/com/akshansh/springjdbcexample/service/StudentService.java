@@ -2,6 +2,7 @@ package com.akshansh.springjdbcexample.service;
 
 import com.akshansh.springjdbcexample.model.Student;
 import com.akshansh.springjdbcexample.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +11,12 @@ import java.util.List;
 public class StudentService {
     private StudentRepository repo;
 
-    public StudentService(StudentRepository repo){
+    public StudentRepository getRepo() {
+        return repo;
+    }
+
+    @Autowired
+    public void setRepo(StudentRepository repo) {
         this.repo = repo;
     }
 
