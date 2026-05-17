@@ -22,10 +22,15 @@ class ThreadB implements Runnable{
 
 public class ThreadDemo {
       public static void main(String[] args) {
+            
+            System.out.println("Main thread started");
+
             ThreadA obj = new ThreadA();
             ThreadB obj1 = new ThreadB();
             Thread t = new Thread(obj1);
             obj.start();
             t.start();
+
+            System.out.println("Main thread execution completed");
       }
 }
